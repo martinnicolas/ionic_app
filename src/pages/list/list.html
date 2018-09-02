@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Personas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-fab bottom right>
+      <button (click)="nuevaPersona()" ion-fab><ion-icon [name]="'person-add'"></ion-icon></button>
+  </ion-fab>
+  <ion-list>
+    <button ion-item *ngFor="let item of personas" (click)="itemTapped($event, item)">
+      <ion-icon [name]="'person'" item-start></ion-icon>
+      <div class="item-note" item-end>
+        {{item.apellido}}, {{item.nombre}}
+      </div>
+    </button>
+  </ion-list>
+</ion-content>
